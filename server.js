@@ -23,8 +23,8 @@ app.engine("html", require("ejs").renderFile);
 app.use("/static", express.static(path.join(__dirname, "build/static")));
 
 app.get("/", (req, res) => {
+  console.log(process.env);
   const { REACT_APP_API_URL } = process.env;
-  console.log(REACT_APP_API_URL);
   res.render("index.html", { REACT_APP_API_URL });
 });
 
