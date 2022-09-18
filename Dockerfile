@@ -15,7 +15,7 @@ WORKDIR /app
 
 ## COPY the package.json into the above defined working directory
 COPY package.json ./
-
+USER root
 RUN npm install
 ## COPY the rest of the code into the working directory
 COPY . .
